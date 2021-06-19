@@ -1,9 +1,8 @@
 const videoSelectBtn = document.getElementById('videocct');
 videoSelectBtn.onclick = getVideoSources;
-const { desktopCapturer, TouchBarColorPicker } = require('electron');
+const { desktopCapturer } = require('electron');
 const { Menu, dialog } = require('electron').remote;
 const { writeFile } = require('fs')
-
 const video = document.querySelector("video");
 const start = document.getElementById("start");
 const stop = document.getElementById("stop");
@@ -11,13 +10,10 @@ var Record;
 const Chunks = [];
 
 
-
-
 async function getVideoSources() {
     const InputVideo = await desktopCapturer.getSources({
         types: ['window', 'screen']
     });
-
     const videoOptionsMenu = Menu.buildFromTemplate(
         InputVideo.map(source => {
             return {
@@ -30,9 +26,7 @@ async function getVideoSources() {
 }
 
 async function selectSource(source) {
-
     const con = {
-
         audio: {
             mandatory: {
                 chromeMediaSource: 'desktop'
@@ -49,11 +43,8 @@ async function selectSource(source) {
         .getUserMedia({ audio: false, video: con.video });
     const VideoOut = await navigator.mediaDevices
         .getUserMedia(con);
-
     video.srcObject = stream;
     video.play();
-
-
     const option = { mimeType: 'video/webm;codecs=vp9' };
     Record = new MediaRecorder(VideoOut, option);
     Record.ondataavailable = Data;
@@ -63,7 +54,6 @@ async function selectSource(source) {
 function Data(e) {
     Chunks.push(e.data)
 }
-
 
 async function Save(e) {
     const blob = new Blob(Chunks, {
@@ -84,7 +74,6 @@ start.onclick = e => {
         start.innerText = 'Nahráváš!';
     }
 };
-
 
 stop.onclick = e => {
     if (Record) {
