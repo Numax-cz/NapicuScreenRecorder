@@ -26,8 +26,18 @@ video {
   justify-content: space-evenly;
 }
 button{
-  border: 1px #3498db solid;
+  border: 1.23px black solid;
   padding: 6px;
-  font-size: 1.4rem;
+  font-weight: 100;
+  font-size: 1rem;
   cursor: pointer;
+}
+.Green{
+  color: #44bd32;
+}
+.Red{
+  color: #e84118;
+}
+.Yel{
+  color:#fbc531;
 }
