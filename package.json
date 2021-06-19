@@ -2,13 +2,13 @@
   "name": "napicuscreenrecorder",
   "productName": "napicuscreenrecorder",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Nejlepší aplikaca",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "pack": "electron-builder --dir",
     "buildLin": "electron-builder --linux",
-    "dist": "electron-builder"
+    "buildWin": "electron-builder --windows"
   },
   "keywords": [],
   "author": {
@@ -20,16 +20,41 @@
     "appId": "com.napicu.app",
     "productName": "NapicuApp",
     "linux": {
+      "icon": "build/icon.png",
       "target": [
-        "snap"
+        {
+          "target": "snap",
+          "arch": [
+            "x64"
+          ]
+        }
       ],
       "category": "Utility"
+    },
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "artifactName": "Obsko${version}_Setup.${ext}",
     "forceCodeSigning": false
   },
   "devDependencies": {
-    "electron-builder": "^22.8.1",
-    "electron": "13.1.2"
+    "@electron-forge/cli": "^6.0.0-beta.57",
+    "@electron-forge/maker-deb": "^6.0.0-beta.57",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+    "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "electron": "13.1.2",
+    "electron-builder": "^22.11.7"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
