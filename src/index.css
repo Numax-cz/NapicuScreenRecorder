@@ -2,19 +2,25 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: rgb(63, 63, 63);
+  background-color: #2d3436;
   color: whitesmoke;
   font-family: 'Roboto', sans-serif;
 }
 
 video {
   width: 100%
+
 }
 #video{
-  padding-right: 164px;
-  padding-left: 164px;
+  padding: 20px 164px;
+  background-color: #636e72;
+
 }
 
+.Videocon{
+  max-width: 80%;
+  margin: auto;
+}
 .Title{
   text-align: center;
   margin-top: 10px;
@@ -23,6 +29,7 @@ video {
   width: 40%;
   margin: auto;
   display: flex;
+  padding: 20px;
   justify-content: space-evenly;
 }
 button{

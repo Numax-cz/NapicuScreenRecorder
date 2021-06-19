@@ -4,6 +4,7 @@
 * Kodek vp9
 * Výstup .webm
 * Vytvořeno pomocí [Electron](https://www.electronjs.org/)
+* Vyzkoušeno na rozlišení 1920x1080
 
 
 ### Instalace

@@ -78,6 +78,6 @@ start.onclick = e => {
 stop.onclick = e => {
     if (Record) {
         Record.stop();
-        start.innerText = 'Start';
+        start.innerText = 'Nahrávat';
     }
 };
