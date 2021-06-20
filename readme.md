@@ -1,10 +1,11 @@
 # NapicuScreenRecorder
-* Aplikace pro natáčení obrazovky + zvuk
+* Aplikace pro nahrávání obrazu
+* Pro nahrávání zvuku potřeba povolit v `render.js` (Na linuxu problém se zvukem. Více na [Electron - DesktopCapturer](https://www.electronjs.org/docs/api/desktop-capturer) )
 * Aplikace je připravena pro architekturu x64, lze ji ale změnit v `package.json` více na [Electron Builder - Any Target](https://www.electron.build/configuration/linux)
+* Vyzkoušeno na rozlišení 1920x1080
 * Kodek vp9
 * Výstup .webm
 * Vytvořeno pomocí [Electron](https://www.electronjs.org/)
-* Vyzkoušeno na rozlišení 1920x1080
 
 
 ### Instalace
@@ -35,3 +36,4 @@
    npm run pack
    ```
 
+![Nahled](https://github.com/Numax-cz/NapicuScreenRecorder/img/Sreen.png)

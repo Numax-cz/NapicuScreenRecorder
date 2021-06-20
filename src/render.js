@@ -26,12 +26,13 @@ async function getVideoSources() {
 }
 
 async function selectSource(source) {
+    console.log(source);
     const con = {
-        audio: {
-            mandatory: {
-                chromeMediaSource: 'desktop',
-            }
-        },
+        //--Audio--// 
+        // audio: {
+        //     chromeMediaSource: 'desktop'
+        // },
+        audio: false,
         video: {
             mandatory: {
                 chromeMediaSource: 'desktop',
@@ -40,7 +41,7 @@ async function selectSource(source) {
         }
     };
     const stream = await navigator.mediaDevices
-        .getUserMedia({ audio: true, video: con.video });
+        .getUserMedia(con);
 
 
 
