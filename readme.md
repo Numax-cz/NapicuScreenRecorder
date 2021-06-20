@@ -36,4 +36,4 @@
    npm run pack
    ```
 
-![Nahled](https://github.com/Numax-cz/NapicuScreenRecorder/img/Sreen.png)
+![Nahled](https://github.com/Numax-cz/NapicuScreenRecorder/blob/main/img/Screen.png)
