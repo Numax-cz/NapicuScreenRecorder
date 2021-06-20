@@ -29,7 +29,7 @@ async function selectSource(source) {
     const con = {
         audio: {
             mandatory: {
-                chromeMediaSource: 'desktop'
+                chromeMediaSource: 'desktop',
             }
         },
         video: {
@@ -40,9 +40,18 @@ async function selectSource(source) {
         }
     };
     const stream = await navigator.mediaDevices
-        .getUserMedia({ audio: false, video: con.video });
+        .getUserMedia({ audio: true, video: con.video });
+
+
+
     const VideoOut = await navigator.mediaDevices
         .getUserMedia(con);
+
+
+
+
+
+
     video.srcObject = stream;
     video.play();
     const option = { mimeType: 'video/webm;codecs=vp9' };
@@ -50,6 +59,13 @@ async function selectSource(source) {
     Record.ondataavailable = Data;
     Record.onstop = Save;
 }
+
+
+
+
+
+
+
 
 function Data(e) {
     Chunks.push(e.data)
